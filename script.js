@@ -18,17 +18,17 @@ let dict = {
     "X": 29
 }
 
-Object.keys(dict).forEach((key) => {
-    console.log(key, " ", dict[key])
-    
-})
+let table = document.querySelector("table tbody")
 
+Object.keys(dict).forEach((key) => {
+    table.innerHTML += `<tr><th scope="row">${key}</th><td>${dict[key].toString()}</td></tr>`
+})
 
 inputTextArea.addEventListener("input", (ev) => {
     let text = inputTextArea.value.toUpperCase();
     let resValue = ""
-    for(let i = 0 ; i < text.length ; i++) {
-        if(dict[text[i]] != null) {
+    for (let i = 0; i < text.length; i++) {
+        if (dict[text[i]] != null) {
             resValue += dict[text[i]]
         }
     }
